@@ -23,12 +23,16 @@ Requires Bash v4
 ## Setup
 
 ```sh
-# Framework folder
-mkdir "${DIR_OF_YOUR_CHOICE}"
-# Download particular version and extract
-curl -sL https://github.com/redneckz/red-shell-unit/tarball/"${TAG}" | tar -xzv --strip-components=1 -C "${DIR_OF_YOUR_CHOICE}"
-# Add to PATH (or permanently update /etc/environment)
-PATH+=:"${DIR_OF_YOUR_CHOICE}"
+# you can set env var R2U_INSTALL_DIR to overwrite install directory
+curl --silent --location https://raw.githubusercontent.com/hypery2k/red-shell-unit/main/.bin/install.sh | bash
+```
+
+```sh
+# you can set env var R2U_INSTALL_DIR to overwrite install directory
+R2U_INSTALL_DIR=$(pwd)/r2u
+curl --silent --location https://raw.githubusercontent.com/hypery2k/red-shell-unit/main/.bin/install.sh | bash
+# If using R2U_INSTALL_DIR Add to PATH (or permanently update /etc/environment)
+PATH="$PATH:$R2U_INSTALL_DIR"
 ```
 
 ## Usage
